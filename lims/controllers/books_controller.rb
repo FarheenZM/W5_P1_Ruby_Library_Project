@@ -17,7 +17,7 @@ post '/books/add_book' do
   redirect '/books'
 end
 
-get '/books/edit_book' do
+get '/books/edit_book/:id' do
   # need id of book to edit;
   # get id from params
   # find book by id
@@ -28,7 +28,7 @@ get '/books/edit_book' do
   erb(:"books/edit_book")
 end
 
-post 'books/edit_book' do
+post '/books/edit_book/:id' do
   book = Book.new(params)
   book.update()
   redirect '/books'

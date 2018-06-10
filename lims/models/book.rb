@@ -33,9 +33,9 @@ class Book
   end
 
   def update()
-    sql = "UPDATE books SET (title, category, available) VALUES ($1, $2, $3) WHERE id = $4"
+    sql = "UPDATE books SET (title, category, available) = ($1, $2, $3) WHERE id = $4"
     values = [@title, @category, @available, @id]
-    SqlRunner.run(sql, values) 
+    SqlRunner.run(sql, values)
   end
 
   def self.delete_all

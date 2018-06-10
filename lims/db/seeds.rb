@@ -8,14 +8,14 @@ Book.delete_all()
 Customer.delete_all()
 
 book1 = Book.new({
-  "title" => "science",
-  "category" => "A",
+  "title" => "Book 1",
+  "category" => "Science",
   "available" => "Yes"
 })
 
 book2 = Book.new({
-  "title" => "history",
-  "category" => "B",
+  "title" => "Book 2",
+  "category" => "Fiction",
   "available" => "Yes"
 })
 
@@ -23,15 +23,18 @@ book1.save()
 book2.save()
 
 customer1 = Customer.new({
-  "name" => "Tina"
+  "name" => "Tina",
+  "postal_code" => "G1 1SJ"
 })
 
 customer2 = Customer.new({
-  "name" => "Ria"
+  "name" => "Ria",
+  "postal_code" => "G3 6EQ"
 })
 
 customer3 = Customer.new({
-  "name" => "Walter"
+  "name" => "Walter",
+  "postal_code" => "G1 1FQ"
 })
 
 customer1.save()

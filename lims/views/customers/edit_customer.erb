@@ -1,0 +1,11 @@
+<form action="/customers/edit_customer/<%= @customer.id%>" method="post">
+
+  <label for="name_field">Name: </label>
+  <input id="name_field" type="text" name="name" value= "<%= @customer.name %>" />
+
+  <label for="postal_code_field">Name: </label>
+  <input id="postal_code_field" type="text" name="postal_code" value= "<%= @customer.postal_code %>" />
+
+  <input type="submit" value="Edit" />
+
+</form>

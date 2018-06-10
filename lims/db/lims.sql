@@ -13,7 +13,8 @@ CREATE TABLE books
 CREATE TABLE customers
 (
   id SERIAL8 primary key,
-  name VARCHAR(255) not null
+  name VARCHAR(255) not null,
+  postal_code VARCHAR(10) not null
 );
 
 CREATE TABLE rentals

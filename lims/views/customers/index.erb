@@ -1,0 +1,9 @@
+<h1>Customers list</h1>
+<% for customer in @customers%>
+  Name: <%= customer.name %><br>
+  Postal code: <%= customer.postal_code %><br>
+  <a href="/customers/edit_customer/<%= customer.id%>">Edit</a><br>
+  <br>
+<% end %>
+
+<a href="/customers/add_customer">Add new customer here</a>
