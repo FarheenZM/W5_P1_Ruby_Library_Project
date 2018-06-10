@@ -1,0 +1,9 @@
+<p> Books List </p>
+<% for book in @books %>
+Book Title : <%= book.title %> <br>
+Book Category : <%= book.category %> <br>
+Book Availability: <%= book.available %><br>
+<br>
+<% end %>
+
+<a href = "books/add_book"> Add book here </a>
