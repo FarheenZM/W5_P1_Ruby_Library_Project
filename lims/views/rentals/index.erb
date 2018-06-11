@@ -1,0 +1,10 @@
+<h1>Rental details</h1>
+<%for rental in @rentals%>
+Rental id: <%= rental.id%><br>
+Customer: <%=rental.customer.name%><br> <!-- rental object, customer method, name property -->
+Book: <%=rental.book.title%> <br>
+<a href="/rentals/delete_rental">Return book</a>
+<br><br><br>
+<%end%>
+
+<a href="/rentals/add_rental">Make a new rental</a>

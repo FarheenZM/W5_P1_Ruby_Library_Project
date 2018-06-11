@@ -1,0 +1,25 @@
+<form action="/rentals/add_rental" method="post">
+
+<label> Select a Customer:
+  <select name="customer_id">
+    <% for cust in @customers %>
+      <option value="<%= cust.id %>"><%= cust.name%></option>
+    <% end %>
+  </select>
+</label>
+
+<label> Select a Book:
+  <select name="book_id">
+    <% for book in @books %>
+      <option value="<%= book.id %>"><%= book.title%></option>
+    <% end %>
+  </select>
+</label>
+
+<input type="submit" value="Add rental">
+
+</form>
+
+<!-- should display list of existing customers
+should display list of available books
+should check if a customer already has a book -->

@@ -24,17 +24,20 @@ book2.save()
 
 customer1 = Customer.new({
   "name" => "Tina",
-  "postal_code" => "G1 1SJ"
+  "postal_code" => "G1 1SJ",
+  "rented_book_count" => 0
 })
 
 customer2 = Customer.new({
   "name" => "Ria",
-  "postal_code" => "G3 6EQ"
+  "postal_code" => "G3 6EQ",
+  "rented_book_count" => 0
 })
 
 customer3 = Customer.new({
   "name" => "Walter",
-  "postal_code" => "G1 1FQ"
+  "postal_code" => "G1 1FQ",
+  "rented_book_count" => 0
 })
 
 customer1.save()
@@ -48,7 +51,7 @@ rental1 = Rental.new({
 
 rental2 = Rental.new({
 "book_id" => book2.id,
-"customer_id" => customer1.id
+"customer_id" => customer3.id
 })
 
 rental1.save()
