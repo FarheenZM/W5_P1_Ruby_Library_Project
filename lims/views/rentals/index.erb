@@ -3,7 +3,7 @@
 Rental id: <%= rental.id%><br>
 Customer: <%=rental.customer.name%><br> <!-- rental object, customer method, name property -->
 Book: <%=rental.book.title%> <br>
-<a href="/rentals/delete_rental">Return book</a>
+<a href="/rentals/delete_rental/<%= rental.id %>">Return book</a>
 <br><br><br>
 <%end%>
 

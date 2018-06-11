@@ -1,10 +1,27 @@
-<p> Books List </p>
-<% for book in @books %>
-Book Title : <%= book.title %> <br>
-Book Category : <%= book.category %> <br>
-Book Availability: <%= book.available %><br>
-<a href="books/edit_book/<%= book.id %>">Edit</a> <br>
-<br>
-<% end %>
+<h1> Books List </h1>
+<table>
 
+  <tr>
+    <th>Title</th>
+    <th>Category</th>
+    <th>Availability</th>
+    <th>Actions</th>
+  </tr>
+
+  <% for book in @books %>
+  <tr>
+    <td><%= book.title %> </td>
+    <td><%= book.category %> </td>
+    <td><%= book.available %></td>
+    <td>
+      <a href="books/edit_book/<%= book.id %>">Edit</a>
+      <% if book.available == "Yes"%>
+      <a href="books/delete_book/<%= book.id %>">Remove</a> <br>
+      <% end %>
+    </td>
+  </tr>
+  <% end %>
+
+</table>
+<br>
 <a href = "books/add_book"> Add new book here </a>

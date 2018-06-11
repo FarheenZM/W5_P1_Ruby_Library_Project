@@ -3,6 +3,7 @@ require( 'sinatra/contrib/all' )
 require_relative('../models/rental')
 require_relative('../models/book')
 require_relative('../models/customer')
+also_reload( '../models/*' )
 
 get '/rentals' do
   @rentals = Rental.all()
@@ -18,5 +19,10 @@ end
 post '/rentals/add_rental' do
   rental = Rental.new(params)
   rental.save()
+  redirect '/rentals'
+end
+
+get '/rentals/delete_rental/:id' do
+  Rental.delete(params[:id])
   redirect '/rentals'
 end

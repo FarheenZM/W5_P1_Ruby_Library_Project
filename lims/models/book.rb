@@ -45,6 +45,12 @@ class Book
     return available_books.map{|book_hash| Book.new(book_hash)}
   end
 
+  def self.delete(id)
+    sql = "DELETE FROM books WHERE id = $1"
+    values = [id]
+    SqlRunner.run(sql, values)
+  end
+
   def self.delete_all
     sql = "DELETE FROM books"
     SqlRunner.run( sql )

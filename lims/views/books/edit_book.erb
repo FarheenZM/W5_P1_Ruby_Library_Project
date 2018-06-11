@@ -6,15 +6,22 @@
 
   <label for = "category">Book Category:</label>
   <select id = "category" name = "category">
-      <option value = "Science" <%= "selected" if @book.category == "Science"%>>Science</option>
-      <option value = "Fiction" <%= "selected" if @book.category == "Fiction"%>>Fiction</option>
+      <option value = "Sci-Fi" <%= "selected" if @book.category == "Sci-Fi"%>>Sci-Fi</option>
+      <option value = "Health" <%= "selected" if @book.category == "Health"%>>Health</option>
+      <option value = "Travel" <%= "selected" if @book.category == "Travel"%>>Travel</option>
+      <option value = "Spirituality" <%= "selected" if @book.category == "Spirituality"%>>Spirituality</option>
       <option value = "Cooking" <%= "selected" if @book.category == "Cooking"%>>Cooking</option>
+      <option value = "Biography" <%= "selected" if @book.category == "Biography"%>>Biography</option>
+      <option value = "History" <%= "selected" if @book.category == "History"%>>History</option>
+      <option value = "Art" <%= "selected" if @book.category == "Art"%>>Art</option>
+      <option value = "Poetry" <%= "selected" if @book.category == "Poetry"%>>Poetry</option>
+      <option value = "Comics" <%= "selected" if @book.category == "Comics"%>>Comics</option>
   </select>
 
   <label for = "available">Book Available:</label> <!-- TODO can make radio buttons  -->
   <select id = "available" name = "available">
-      <option value = "Yes" <%= "selected" if @book.category == "Yes"%>>Yes</option>
-      <option value = "No" <%= "selected" if @book.category == "No"%>>No</option>
+    <option value ="Yes" <%= "selected" if @book.available == "Yes"%>>Yes</option>
+    <option value ="No" <%= "selected" if @book.available == "No"%>>No</option>
   </select>
 
   <input type="submit" value="Edit" />

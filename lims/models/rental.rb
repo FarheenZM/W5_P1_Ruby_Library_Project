@@ -16,11 +16,20 @@ class Rental
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
 
-    #TODO - why isnt this working
-    #customer.rented_book_count += 1
-    #book.available = "No"
-    #customer.update()
-    #book.update()
+    sql = "UPDATE books SET available='No' WHERE id=$1"
+    values = [@book_id]
+    SqlRunner.run(sql, values)
+
+
+    sql = "SELECT rented_book_count FROM customers WHERE id=$1"
+    values = [@customer_id]
+    results = SqlRunner.run(sql, values)
+    rented_book_count = results.first()['rented_book_count'].to_i
+    rented_book_count += 1
+
+    sql = "UPDATE customers SET rented_book_count=$1 WHERE id=$2"
+    values = [rented_book_count, @customer_id]
+    SqlRunner.run(sql, values)
   end
 
   def self.all()
@@ -43,11 +52,15 @@ class Rental
     return Customer.new(cust.first)
   end
 
+  def self.delete(id)
+    sql = "DELETE FROM rentals WHERE id = $1"
+    values = [id]
+    SqlRunner.run(sql, values)
+  end
+
   def self.delete_all
     sql = "DELETE FROM rentals"
     SqlRunner.run( sql )
   end
 
 end
-
-# "SELECT rentals.id, customers.name, books.title FROM rentals INNER JOIN customers ON rentals.customer_id = customers.id INNER JOIN books ON rentals.book_id = books.id"

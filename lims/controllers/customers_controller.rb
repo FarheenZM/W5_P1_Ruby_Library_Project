@@ -1,6 +1,8 @@
 require( 'sinatra' )
 require( 'sinatra/contrib/all' )
 require_relative('../models/customer')
+also_reload( '../models/*' )
+
 
 get '/customers' do
   @customers = Customer.all()
@@ -28,5 +30,10 @@ end
 post '/customers/edit_customer/:id' do
   customer = Customer.new(params)
   customer.update()
+  redirect '/customers'
+end
+
+get '/customers/delete_customer/:id' do
+  Customer.delete(params[:id])
   redirect '/customers'
 end
