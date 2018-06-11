@@ -1,4 +1,4 @@
-
+<h1>Edit Book</h1>
 <form method="post" action="/books/edit_book/<%= @book.id %>">
 
   <label for = "title">Book Title:</label>
@@ -16,12 +16,6 @@
       <option value = "Art" <%= "selected" if @book.category == "Art"%>>Art</option>
       <option value = "Poetry" <%= "selected" if @book.category == "Poetry"%>>Poetry</option>
       <option value = "Comics" <%= "selected" if @book.category == "Comics"%>>Comics</option>
-  </select>
-
-  <label for = "available">Book Available:</label> <!-- TODO can make radio buttons  -->
-  <select id = "available" name = "available">
-    <option value ="Yes" <%= "selected" if @book.available == "Yes"%>>Yes</option>
-    <option value ="No" <%= "selected" if @book.available == "No"%>>No</option>
   </select>
 
   <input type="submit" value="Edit" />

@@ -1,20 +1,34 @@
 <h1>Customers list</h1>
+
 <table>
+
   <tr>
     <th>Name</th>
     <th>Postal code</th>
     <th>Actions</th>
   </tr>
-  <% for customer in @customers%>
+
+  <% for customer in @customers %>
   <tr>
   <td><%= customer.name %></td>
   <td><%= customer.postal_code %></td>
   <td>
-    <a href="/customers/edit_customer/<%= customer.id%>">Edit</a>
-    <a href="/customers/delete_customer/<%= customer.id%>">Delete Customer</a>
+    <!-- <a href="/customers/edit_customer/<%= customer.id%>">Edit</a> -->
+    <form method="get" action="customers/edit_customer/<%= customer.id%>">
+      <input type="submit" value="EDIT"/>
+    </form>
+    <!-- <a href="/customers/delete_customer/<%= customer.id%>">Delete</a> -->
+    <form method="get" action="customers/delete_customer/<%= customer.id%>">
+      <input type="submit" value="DELETE"/>
+    </form>
   </td>
   </tr>
   <% end %>
+
 </table>
+
 <br>
-<a href="/customers/add_customer">Add new customer here</a>
+<!-- <a href="/customers/add_customer">Add new customer here</a> -->
+<form method="get" action="customers/add_customer">
+  <input type="submit" value="Add new customer"/>
+</form>

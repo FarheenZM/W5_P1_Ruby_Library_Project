@@ -6,16 +6,14 @@ CREATE TABLE books
 (
   id SERIAL8 primary key,
   title VARCHAR(255) not null,
-  category VARCHAR(255),
-  available VARCHAR(3)   --TODO make it BOOLEAN, availability of books for rent
+  category VARCHAR(255)
 );
 
 CREATE TABLE customers
 (
   id SERIAL8 primary key,
   name VARCHAR(255) not null,
-  postal_code VARCHAR(10) not null,
-  rented_book_count INT2
+  postal_code VARCHAR(10) not null
 );
 
 CREATE TABLE rentals

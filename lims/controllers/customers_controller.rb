@@ -9,6 +9,7 @@ get '/customers' do
   erb(:"customers/index")
 end
 
+# add new customer
 get '/customers/add_customer' do
   # opens form
   # accepts details i.e params
@@ -22,6 +23,7 @@ post '/customers/add_customer' do
   redirect '/customers'
 end
 
+# update existing customer details
 get '/customers/edit_customer/:id' do
   @customer = Customer.find(params[:id])
   erb(:"customers/edit_customer")
@@ -33,6 +35,7 @@ post '/customers/edit_customer/:id' do
   redirect '/customers'
 end
 
+# remove customers
 get '/customers/delete_customer/:id' do
   Customer.delete(params[:id])
   redirect '/customers'

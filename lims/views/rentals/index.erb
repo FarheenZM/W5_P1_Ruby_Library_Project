@@ -1,10 +1,30 @@
 <h1>Rental details</h1>
+<table>
+
+  <tr>
+    <th>Rental id</th>
+    <th>Customer</th>
+    <th>Book</th>
+  </tr>
+
 <%for rental in @rentals%>
-Rental id: <%= rental.id%><br>
-Customer: <%=rental.customer.name%><br> <!-- rental object, customer method, name property -->
-Book: <%=rental.book.title%> <br>
-<a href="/rentals/delete_rental/<%= rental.id %>">Return book</a>
-<br><br><br>
+<tr>
+  <th><%= rental.id%></th>
+<th><%=rental.customer.name%></th> <!-- rental object, customer method, name property -->
+<th><%=rental.book.title%> </th>
+<th>
+  <!-- <a href="/rentals/delete_rental/<%= rental.id %>">Return book</a> -->
+  <form method="get" action="rentals/delete_rental/<%= rental.id %>">
+    <input type="submit" value="RETURN BOOK"/>
+  </form>
+</th>
+</tr>
 <%end%>
 
-<a href="/rentals/add_rental">Make a new rental</a>
+</table>
+
+<br>
+<!-- <a href="/rentals/add_rental">Add new rental here</a> -->
+<form method="get" action="rentals/add_rental">
+  <input type="submit" value="Add new rental"/>
+</form>

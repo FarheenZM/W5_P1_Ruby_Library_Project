@@ -1,0 +1,82 @@
+body {
+  background: black url('/images/bg1.jpeg');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  color: black;
+  font-family: 'Merriweather', serif;
+  text-align: center;
+  padding: 0px;
+  margin: 0px;
+}
+
+div #wrapper {
+  background-color: grey;
+  opacity: 0.5;
+  width: 90%;
+  margin-top: 5%;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px;
+  border-style: solid;
+  border-color: maroon;
+}
+
+h1 {
+  color: maroon;
+  font-family: "monospace", sans-serif;
+  font-size: 1.8em;
+  font-weight: bold;
+  font-style:;
+  margin-bottom: 20px;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0px;
+  padding: 0px;
+}
+
+
+a, a:link, a:visited {
+  color: #a2937e;
+  text-decoration: none;
+}
+
+a:hover, a:active, a:focus {
+  color: #c6e2ff;
+}
+
+nav {
+  padding: 0px;
+  margin: 0px;
+  padding-right: 25px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333333;
+}
+
+li {
+    float: left;
+}
+
+nav ul li {
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111111;
+}

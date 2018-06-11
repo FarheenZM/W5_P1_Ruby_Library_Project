@@ -10,9 +10,12 @@ get '/rentals' do
   erb(:"rentals/index")
 end
 
+# add new rental;
+# should display list of available books
+# should check if a customer already has a book
 get '/rentals/add_rental' do
-  @books = Book.all_available()
-  @customers = Customer.all_who_can_rent()
+  @books = Book.all()
+  @customers = Customer.all()
   erb(:"rentals/add_rental")
 end
 
@@ -22,6 +25,7 @@ post '/rentals/add_rental' do
   redirect '/rentals'
 end
 
+# delete a rental i.e returning a book
 get '/rentals/delete_rental/:id' do
   Rental.delete(params[:id])
   redirect '/rentals'

@@ -12,11 +12,24 @@
   <tr>
     <td><%= book.title %> </td>
     <td><%= book.category %> </td>
-    <td><%= book.available %></td>
+
+    <% if book.is_available == TRUE %>
+    <td>Yes</td>
+    <% else %>
+    <td>No</td>
+    <% end %>
+
     <td>
-      <a href="books/edit_book/<%= book.id %>">Edit</a>
-      <% if book.available == "Yes"%>
-      <a href="books/delete_book/<%= book.id %>">Remove</a> <br>
+      <form method="get" action="books/edit_book/<%= book.id %>">
+        <input type="submit" value="EDIT"/>
+      </form>
+      <!-- <a href="books/edit_book/<%= book.id %>">Edit</a> -->
+
+      <% if book.is_available == TRUE %>
+      <form method="get" action="books/delete_book/<%= book.id %>">
+        <input type="submit" value="REMOVE"/>
+      </form>
+      <!-- <a href="books/delete_book/<%= book.id %>">Remove</a> <br> -->
       <% end %>
     </td>
   </tr>
@@ -24,4 +37,7 @@
 
 </table>
 <br>
-<a href = "books/add_book"> Add new book here </a>
+<!-- <a href = "books/add_book"> Add new book here </a> -->
+<form method="get" action="books/add_book">
+  <input type="submit" value="Add Book"/>
+</form>

@@ -9,38 +9,32 @@ Customer.delete_all()
 
 book1 = Book.new({
   "title" => "Dune",
-  "category" => "Sci-Fi",
-  "available" => "Yes"
+  "category" => "Sci-Fi"
 })
 
 book2 = Book.new({
   "title" => "The diet delusion",
-  "category" => "Health",
-  "available" => "Yes"
+  "category" => "Health"
 })
 
 book3 = Book.new({
   "title" => "Blue highways",
-  "category" => "Travel",
-  "available" => "Yes"
+  "category" => "Travel"
 })
 
 book4 = Book.new({
   "title" => "The power of Now",
-  "category" => "Spirituality",
-  "available" => "Yes"
+  "category" => "Spirituality"
 })
 
 book5 = Book.new({
   "title" => "5 Ingridients - Jamie Oliver",
-  "category" => "Cooking",
-  "available" => "Yes"
+  "category" => "Cooking"
 })
 
 book6 = Book.new({
   "title" => "Steve Jobs",
-  "category" => "Biography",
-  "available" => "Yes"
+  "category" => "Biography"
 })
 
 book1.save()
@@ -52,20 +46,17 @@ book6.save()
 
 customer1 = Customer.new({
   "name" => "Tina Sharma",
-  "postal_code" => "G1 1SJ",
-  "rented_book_count" => 0
+  "postal_code" => "G1 1SJ"
 })
 
 customer2 = Customer.new({
   "name" => "Ria J",
-  "postal_code" => "G3 6EQ",
-  "rented_book_count" => 0
+  "postal_code" => "G3 6EQ"
 })
 
 customer3 = Customer.new({
   "name" => "Walter W",
-  "postal_code" => "G1 1FQ",
-  "rented_book_count" => 0
+  "postal_code" => "G1 1FQ"
 })
 
 customer1.save()

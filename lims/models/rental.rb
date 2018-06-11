@@ -15,21 +15,6 @@ class Rental
     values = [@book_id, @customer_id]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
-
-    sql = "UPDATE books SET available='No' WHERE id=$1"
-    values = [@book_id]
-    SqlRunner.run(sql, values)
-
-
-    sql = "SELECT rented_book_count FROM customers WHERE id=$1"
-    values = [@customer_id]
-    results = SqlRunner.run(sql, values)
-    rented_book_count = results.first()['rented_book_count'].to_i
-    rented_book_count += 1
-
-    sql = "UPDATE customers SET rented_book_count=$1 WHERE id=$2"
-    values = [rented_book_count, @customer_id]
-    SqlRunner.run(sql, values)
   end
 
   def self.all()
