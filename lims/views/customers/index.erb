@@ -15,11 +15,11 @@
   <td>
     <!-- <a href="/customers/edit_customer/<%= customer.id%>">Edit</a> -->
     <form method="get" action="customers/edit_customer/<%= customer.id%>">
-      <input type="submit" value="EDIT"/>
+      <input class="btn btn--table_button" type="submit" value="EDIT"/>
     </form>
     <!-- <a href="/customers/delete_customer/<%= customer.id%>">Delete</a> -->
     <form method="get" action="customers/delete_customer/<%= customer.id%>">
-      <input type="submit" value="DELETE"/>
+      <input class="btn btn--del" type="submit" value="DELETE"/>
     </form>
   </td>
   </tr>
@@ -30,5 +30,5 @@
 <br>
 <!-- <a href="/customers/add_customer">Add new customer here</a> -->
 <form method="get" action="customers/add_customer">
-  <input type="submit" value="Add new customer"/>
+  <input class="btn btn--main" type="submit" value="Add new customer"/>
 </form>

@@ -1,4 +1,32 @@
-<h1> Books List </h1>
+<h1> Books in stock </h1>
+
+<!-- <form method="post" action="/books/search/search"> -->
+<!--input type="search" id="search_string" name="search_field" placeholder="Search.."-->
+<!--label for = "search">Enter Search term:</label-->
+<!-- <input id="search_field" type="text" name="search"/>
+<input type="submit" value="Search">
+</form> -->
+
+<form method="get" action="/books/search">
+
+  <label for = "searchbar">Keywords:</label>
+  <input id = "searchbar" type = "text" placeholder="Search here.." name="keywords"/>
+
+  <label for = "category">Category:</label>
+  <select id = "category" name = "category">
+    <option value = "Sci-Fi">Sci-Fi</option>
+    <option value = "Health">Health</option>
+    <option value = "Travel">Travel</option>
+    <option value = "Spirituality">Spirituality</option>
+    <option value = "Cooking">Cooking</option>
+    <option value = "Biography">Biography</option>
+    <option value = "History">History</option>
+    <option value = "Art">Art</option>
+    <option value = "Poetry">Poetry</option>
+    <option value = "Comics">Comics</option>
+  </select>
+</form>
+
 <table>
 
   <tr>
@@ -21,13 +49,13 @@
 
     <td>
       <form method="get" action="books/edit_book/<%= book.id %>">
-        <input type="submit" value="EDIT"/>
+        <input class="btn btn--table_button" type="submit" value="EDIT"/>
       </form>
       <!-- <a href="books/edit_book/<%= book.id %>">Edit</a> -->
 
       <% if book.is_available == TRUE %>
       <form method="get" action="books/delete_book/<%= book.id %>">
-        <input type="submit" value="REMOVE"/>
+        <input class="btn btn--del" type="submit" value="REMOVE"/>
       </form>
       <!-- <a href="books/delete_book/<%= book.id %>">Remove</a> <br> -->
       <% end %>
@@ -39,5 +67,7 @@
 <br>
 <!-- <a href = "books/add_book"> Add new book here </a> -->
 <form method="get" action="books/add_book">
-  <input type="submit" value="Add Book"/>
+
+  <input class="btn btn--main" type="submit" value="Add Book"/>
+
 </form>

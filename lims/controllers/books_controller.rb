@@ -43,3 +43,8 @@ get '/books/delete_book/:id' do
   Book.delete(params[:id])
   redirect '/books'
 end
+
+get '/books/search' do
+  @books = Book.search(params)
+  erb(:"books/search")
+end

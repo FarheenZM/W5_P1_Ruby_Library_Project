@@ -1,0 +1,14 @@
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Category</th>
+  </tr>
+
+  <% for book in @books %>
+  <tr>
+    <td><%= book.title %> </td>
+    <td><%= book.category %> </td>
+  </tr>
+  <% end %>
+  
+</table>

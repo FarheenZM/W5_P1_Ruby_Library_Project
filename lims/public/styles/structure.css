@@ -1,6 +1,6 @@
 body {
-  background: black url('/images/bg1.jpeg');
-  background-size: 100%;
+  background: black url('/images/bookbg3.jpg');
+  background-size: cover;
   background-repeat: no-repeat;
   color: black;
   font-family: 'Merriweather', serif;
@@ -10,19 +10,25 @@ body {
 }
 
 div #wrapper {
-  background-color: grey;
-  opacity: 0.5;
-  width: 90%;
-  margin-top: 5%;
-  margin-left: auto;
-  margin-right: auto;
-  border: 1px;
+  background-color: lightblue;
+  opacity: 0.8;
+  width: 60%;
+  margin-top: 3%;
+  margin-left: 20%;
+  margin-right: 20;
+  border: 0.5px;
   border-style: solid;
-  border-color: maroon;
+  border-color: grey;
+  padding-left: 50px;
+  padding-bottom: 20px;
+}
+
+img {
+    display: inline-block;
 }
 
 h1 {
-  color: maroon;
+  color: darkblue;
   font-family: "monospace", sans-serif;
   font-size: 1.8em;
   font-weight: bold;
@@ -31,7 +37,7 @@ h1 {
 }
 
 
-h1, h2, h3, h4, h5, h6 {
+h2 {
   margin: 0px;
   padding: 0px;
 }
@@ -49,7 +55,6 @@ a:hover, a:active, a:focus {
 nav {
   padding: 0px;
   margin: 0px;
-  padding-right: 25px;
 }
 
 ul {
@@ -57,7 +62,7 @@ ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #333333;
+    background-color: lightblue;
 }
 
 li {
@@ -65,7 +70,7 @@ li {
 }
 
 nav ul li {
-  margin-bottom: 15px;
+  margin-bottom: 0px;
   text-transform: uppercase;
 }
 
@@ -77,6 +82,11 @@ li a {
     text-decoration: none;
 }
 
-li a:hover {
+.tab :hover {
     background-color: #111111;
+}
+
+#footer {
+  font-size: 0.75rem;
+  font-family: cursive;
 }

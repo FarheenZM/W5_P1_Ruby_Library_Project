@@ -1,18 +1,15 @@
 input[type="submit"] {
   text-transform: uppercase;
   font-family: 'Special Elite', cursive;
+  width: ;
 }
 
+
 select {
- width: 150px;
- padding: 5px 35px 5px 5px;
- margin: 15px 0;
- font-size: 0.8em;
- -webkit-appearance: none;
- /* background: url('/images/hazard.png') 96% / 15% no-repeat papayawhip; */
- font-family: 'Merriweather', serif;
- border: 1px solid #eee;
- display: block;
+ width: 200px;
+ padding: 15px 15px 15px 15px;
+ margin: 50px 0;
+ font-size: 1em;
 }
 
 :focus {

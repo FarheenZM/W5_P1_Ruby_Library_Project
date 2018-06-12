@@ -3,8 +3,9 @@
 
   <tr>
     <th>Rental id</th>
-    <th>Customer</th>
-    <th>Book</th>
+    <th>Customers</th>
+    <th>Books</th>
+    <th>Actions</th>
   </tr>
 
 <%for rental in @rentals%>
@@ -15,7 +16,7 @@
 <th>
   <!-- <a href="/rentals/delete_rental/<%= rental.id %>">Return book</a> -->
   <form method="get" action="rentals/delete_rental/<%= rental.id %>">
-    <input type="submit" value="RETURN BOOK"/>
+    <input class="btn btn--table_button" type="submit" value="RETURN BOOK"/>
   </form>
 </th>
 </tr>
@@ -26,5 +27,5 @@
 <br>
 <!-- <a href="/rentals/add_rental">Add new rental here</a> -->
 <form method="get" action="rentals/add_rental">
-  <input type="submit" value="Add new rental"/>
+  <input class="btn btn--main" type="submit" value="Add new rental"/>
 </form>

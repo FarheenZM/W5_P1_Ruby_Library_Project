@@ -9,10 +9,11 @@
   <title>LiMS</title>
 
   <link href="https://fonts.googleapis.com/css?family=Merriweather|Special+Elite" rel="stylesheet">
-  <link rel="icon" href="" />
-  <link rel="stylesheet" type="text/css" href="/styles/structure.css">
-  <link rel="stylesheet" type="text/css" href="/styles/tables.css">
+  <link rel="icon" href="/images/logo4.png" />
+  <link rel="stylesheet" type="text/css" href="/styles/structure.css/?aber">
+  <link rel="stylesheet" type="text/css" href="/styles/tables.css/?aab">
   <link rel="stylesheet" type="text/css" href="/styles/forms.css">
+  <link rel="stylesheet" type="text/css" href="/styles/buttons.css">
 </head>
 
 <body>
@@ -22,10 +23,10 @@
     <header>
       <nav>
         <ul>
-        <li><a href="/">HOME</a></li>
-        <li><a href="/books">BOOKS</a></li>
-        <li><a href="/customers">CUSTOMERS</a><li>
-        <li><a href="/rentals">RENTALS</a></li>
+        <li><a href="/"><img src="/images/logo4.png" alt="home logo" width="42" height="42" border="0"><p>LiMS</p></a></li>
+        <li class="tab"><a href="/books">BOOKS</a></li>
+        <li class="tab"><a href="/customers">CUSTOMERS</a><li>
+        <li class="tab"><a href="/rentals">RENTALS</a></li>
         </ul>
       </nav>
     </header>
@@ -34,8 +35,8 @@
       <%= yield %>
     </div>
 
-    <footer>
-      Footer
+    <footer id="footer">
+      &copy; LiMS - designed by farheen
     </footer>
 
   </div>

@@ -1,0 +1,39 @@
+.btn {
+  border:0px none;
+  border-radius: 3%;
+  padding: 8px 12px;
+  color: papayawhip;
+  cursor:pointer;
+  font-family: 'Special Elite', cursive;
+  margin-top: 10px;
+}
+
+.btn--table_button {
+  background-color: black;
+  width: 100%
+}
+
+.btn--table_button:hover {
+  background-color: grey;
+  width: 100%
+}
+
+.btn--del {
+  background-color: red;
+  width: 100%
+}
+
+.btn--del:hover {
+  background-color: grey;
+  width: 100%
+}
+
+.btn--main {
+  background-color: darkblue;
+  font-size: 12px;
+  width: 25%;
+}
+
+.btn--main:hover {
+  background-color: grey;
+}

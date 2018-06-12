@@ -45,6 +45,14 @@ class Book
     return FALSE
   end
 
+  def self.search( search_fields )
+    sql = "SELECT * FROM books WHERE LOWER(title) LIKE $1 OR category LIKE $2"
+    wildcard_search = "%" + search_fields[:keywords].downcase + "%"
+    values = [wildcard_search, search_fields[:category]]
+    results = SqlRunner.run(sql, values)
+    return results.map { |book_hash| Book.new(book_hash) }
+  end
+
   def self.delete(id)
     sql = "DELETE FROM books WHERE id = $1"
     values = [id]
