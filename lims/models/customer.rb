@@ -2,7 +2,7 @@ require_relative( '../db/sql_runner' )
 
 class Customer
 
-  attr_reader :id, :name, :postal_code
+  attr_accessor :id, :name, :postal_code
 
   def initialize( options )
     @id = options['id'].to_i if options['id']

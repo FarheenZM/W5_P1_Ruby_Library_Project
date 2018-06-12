@@ -2,7 +2,7 @@ require_relative( '../db/sql_runner' )
 
 class Book
 
-  attr_reader :id, :title, :category
+  attr_accessor :id, :title, :category
 
   def initialize( options )
     @id = options['id'].to_i if options['id']

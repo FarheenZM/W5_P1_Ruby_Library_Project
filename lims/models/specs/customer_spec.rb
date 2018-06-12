@@ -1,15 +1,43 @@
 require("minitest/autorun")
 require_relative("../customer")
+require_relative("../book")
+require_relative("../rental")
 
 class TestCustomer < MiniTest::Test
 
   def setup
-    options = {"id" => 1, "name" => ""}
-    @customer = Customer.new(options)
+    @customer = Customer.new({"name" => "Jane", "postal_code" => "G1 2GF"})
+    @customer.save()
+
+    @book = Book.new({"title" => "Dune", "category" => "Sci-Fi"})
+    @book.save()
+
+    @rental = Rental.new({"book_id" => @book.id, "customer_id" => @customer.id})
+    @rental.save()
+
   end
 
   def test_save()
+    sql = "SELECT * FROM customers WHERE id = $1"
+    values = [@customer.id]
+    result = SqlRunner.run(sql, values)
+    assert_equal(@customer.id, result.first['id'].to_i)
+  end
 
+  def test_update()
+    @customer.postal_code = "G1 1GS"
+    @customer.update()
+    sql = "SELECT postal_code FROM customers WHERE id = $1"
+    values = [@customer.id]
+    result = SqlRunner.run(sql, values)
+    assert_equal("G1 1GS", result.first['postal_code'])
+  end
+
+  def test_rented_book_count()
+    sql = "SELECT COUNT(*) FROM rentals WHERE customer_id = $1"
+    values = [@customer.id]
+    count = SqlRunner.run(sql, values)
+    assert_equal(count.first['count'].to_i, @customer.rented_book_count())
   end
 
 end
