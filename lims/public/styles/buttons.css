@@ -18,6 +18,10 @@
   width: 100%
 }
 
+.search:hover {
+  background-color: grey;
+}
+
 .btn--del {
   background-color: red;
   width: 100%

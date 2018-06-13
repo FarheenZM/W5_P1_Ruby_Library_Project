@@ -30,16 +30,10 @@ img {
 h1 {
   color: darkblue;
   font-family: "monospace", sans-serif;
-  font-size: 1.8em;
+  font-size: 3em;
   font-weight: bold;
   font-style:;
   margin-bottom: 20px;
-}
-
-
-h2 {
-  margin: 0px;
-  padding: 0px;
 }
 
 
@@ -55,6 +49,7 @@ a:hover, a:active, a:focus {
 nav {
   padding: 0px;
   margin: 0px;
+  opacity: 0.8;
 }
 
 ul {

@@ -46,9 +46,14 @@ class Book
   end
 
   def self.search( search_fields )
-    sql = "SELECT * FROM books WHERE LOWER(title) LIKE $1 OR category LIKE $2"
     wildcard_search = "%" + search_fields[:keywords].downcase + "%"
-    values = [wildcard_search, search_fields[:category]]
+    if search_fields[:category] == ""
+      sql = "SELECT * FROM books WHERE LOWER(title) LIKE $1"
+      values = [wildcard_search]
+    else
+      sql = "SELECT * FROM books WHERE LOWER(title) LIKE $1 AND category LIKE $2"
+      values = [wildcard_search, search_fields[:category]]
+    end
     results = SqlRunner.run(sql, values)
     return results.map { |book_hash| Book.new(book_hash) }
   end

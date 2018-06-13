@@ -1,11 +1,5 @@
-<h1> Books in stock </h1>
-
-<!-- <form method="post" action="/books/search/search"> -->
-<!--input type="search" id="search_string" name="search_field" placeholder="Search.."-->
-<!--label for = "search">Enter Search term:</label-->
-<!-- <input id="search_field" type="text" name="search"/>
-<input type="submit" value="Search">
-</form> -->
+<h1> Book List </h1>
+<h3>(all books - available & rented)</h3>
 
 <form method="get" action="/books/search">
 
@@ -14,6 +8,7 @@
 
   <label for = "category">Category:</label>
   <select id = "category" name = "category">
+    <option value = ""></option>
     <option value = "Sci-Fi">Sci-Fi</option>
     <option value = "Health">Health</option>
     <option value = "Travel">Travel</option>
@@ -25,6 +20,9 @@
     <option value = "Poetry">Poetry</option>
     <option value = "Comics">Comics</option>
   </select>
+
+    <input class="search" type="submit" value="SEARCH"/>
+
 </form>
 
 <table>
@@ -71,3 +69,5 @@
   <input class="btn btn--main" type="submit" value="Add Book"/>
 
 </form>
+
+<h5>* you can only remove books that are not rented </h5>
