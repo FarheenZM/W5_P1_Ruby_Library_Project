@@ -6,7 +6,7 @@ require_relative("../rental")
 class TestCustomer < MiniTest::Test
 
   def setup
-    @customer = Customer.new({"name" => "Jane", "postal_code" => "G1 2GF"})
+    @customer = Customer.new({"name" => "Jane", "address" => "Street A, G1 2GF"})
     @customer.save()
 
     @book = Book.new({"title" => "Dune", "category" => "Sci-Fi"})
@@ -25,12 +25,12 @@ class TestCustomer < MiniTest::Test
   end
 
   def test_update()
-    @customer.postal_code = "G1 1GS"
+    @customer.address = "Street A, G1 1GS"
     @customer.update()
-    sql = "SELECT postal_code FROM customers WHERE id = $1"
+    sql = "SELECT address FROM customers WHERE id = $1"
     values = [@customer.id]
     result = SqlRunner.run(sql, values)
-    assert_equal("G1 1GS", result.first['postal_code'])
+    assert_equal("Street A, G1 1GS", result.first['address'])
   end
 
   def test_rented_book_count()

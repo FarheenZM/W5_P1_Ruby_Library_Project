@@ -1,26 +1,28 @@
-<h1>Registered Customers</h1>
+<br><h1>Registered Customers</h1><br>
 
 <table>
 
   <tr>
     <th>Name</th>
-    <th>Postal code</th>
+    <th>Address</th>
     <th>Actions</th>
   </tr>
 
   <% for customer in @customers %>
   <tr>
   <td><%= customer.name %></td>
-  <td><%= customer.postal_code %></td>
+  <td><%= customer.address %></td>
   <td>
     <!-- <a href="/customers/edit_customer/<%= customer.id%>">Edit</a> -->
     <form method="get" action="customers/edit_customer/<%= customer.id%>">
       <input class="btn btn--table_button" type="submit" value="EDIT"/>
     </form>
     <!-- <a href="/customers/delete_customer/<%= customer.id%>">Delete</a> -->
+    <% if customer.rented_book_count == 0 %> <!-- so that you cannot delete customers who have a rented book with them -->
     <form method="get" action="customers/delete_customer/<%= customer.id%>">
       <input class="btn btn--del" type="submit" value="DELETE"/>
     </form>
+    <% end %>
   </td>
   </tr>
   <% end %>

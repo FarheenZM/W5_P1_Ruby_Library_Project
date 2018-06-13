@@ -2,17 +2,17 @@ require_relative( '../db/sql_runner' )
 
 class Customer
 
-  attr_accessor :id, :name, :postal_code
+  attr_accessor :id, :name, :address
 
   def initialize( options )
     @id = options['id'].to_i if options['id']
     @name = options['name']
-    @postal_code = options['postal_code']
+    @address = options['address']
   end
 
   def save()
-    sql = "INSERT INTO customers (name, postal_code) VALUES ($1, $2) RETURNING id"
-    values = [@name, @postal_code]
+    sql = "INSERT INTO customers (name, address) VALUES ($1, $2) RETURNING id"
+    values = [@name, @address]
     results = SqlRunner.run(sql, values)
     @id = results.first['id'].to_i
   end
@@ -31,8 +31,8 @@ class Customer
   end
 
   def update()
-    sql = "UPDATE customers SET (name, postal_code) = ($1, $2) WHERE id = $3"
-    values = [@name, @postal_code, @id]
+    sql = "UPDATE customers SET (name, address) = ($1, $2) WHERE id = $3"
+    values = [@name, @address, @id]
     SqlRunner.run(sql, values)
   end
 
