@@ -1,7 +1,7 @@
 require_relative( "../models/book.rb" )
 require_relative( "../models/customer.rb" )
 require_relative( "../models/rental.rb" )
-# require("pry-byebug")
+require("pry-byebug")
 
 Rental.delete_all()
 Book.delete_all()
@@ -166,5 +166,5 @@ rental4.save()
 rental5.save()
 rental6.save()
 
-# binding.pry
-# nil
+binding.pry
+nil
